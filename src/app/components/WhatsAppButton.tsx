@@ -16,7 +16,7 @@ export function WhatsAppButton() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onClick={handleWhatsAppClick}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-2xl flex items-center justify-center group overflow-hidden border-4 border-white"
+      className="fixed bottom-6 right-6 z-[9999] w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-[0_10px_30px_rgba(37,211,102,0.5)] flex items-center justify-center group overflow-hidden border-4 border-white transition-all active:scale-95"
       aria-label="Chat on WhatsApp"
     >
       <svg 

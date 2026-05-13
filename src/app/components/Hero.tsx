@@ -80,7 +80,7 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-2 border-white/40 text-white hover:bg-white/10 px-8 py-4 h-auto rounded-full transition-all duration-300 text-base backdrop-blur-sm group flex items-center justify-center"
+                className="w-full border-2 border-white/40 text-black hover:bg-white/10 px-8 py-4 h-auto rounded-full transition-all duration-300 text-base backdrop-blur-sm group flex items-center justify-center"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 Call Now

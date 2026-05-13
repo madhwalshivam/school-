@@ -106,7 +106,7 @@ export function ResultsAndLife() {
           </div>
 
           {/* Netflix-style Scrolling Cards */}
-          <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory">
+          <div className="w-full flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory">
             {lifeEvents.map((event, index) => (
               <motion.div
                 key={event.title}
