@@ -110,8 +110,8 @@ export function ResultsAndLife() {
             {lifeEvents.map((event, index) => (
               <motion.div
                 key={event.title}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.6 }}
                 className="flex-shrink-0 w-80 snap-start group cursor-pointer"

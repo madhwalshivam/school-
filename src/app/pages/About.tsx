@@ -14,8 +14,8 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="p-10 rounded-3xl bg-[#D9D4E3]/20 border border-[#2E2370]/10"
           >
@@ -25,8 +25,8 @@ export default function About() {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="p-10 rounded-3xl bg-[#F4E21A]/10 border border-[#F4E21A]/20"
           >

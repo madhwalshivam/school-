@@ -71,8 +71,8 @@ export default function Academics() {
       <section className="py-24 bg-[#D9D4E3]/30">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-[#2E2370] mb-8">World-Class <span className="text-[#4A3C8C]">CBSE Curriculum</span></h2>
@@ -96,8 +96,8 @@ export default function Academics() {
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="relative"
           >

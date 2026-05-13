@@ -8,7 +8,7 @@ interface SubPageHeroProps {
 
 export function SubPageHero({ title, subtitle, backgroundImage }: SubPageHeroProps) {
   return (
-    <section className="relative h-[50vh] min-h-[400px] w-full overflow-hidden flex items-center justify-center">
+    <section className="relative h-[40vh] min-h-[300px] w-full overflow-hidden flex items-center justify-center pt-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -28,11 +28,11 @@ export function SubPageHero({ title, subtitle, backgroundImage }: SubPageHeroPro
         >
           <h1 
             className="font-bold mb-4"
-            style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', lineHeight: 1.2 }}
+            style={{ fontSize: 'clamp(2rem, 8vw, 3.5rem)', lineHeight: 1.2 }}
           >
             {title}
           </h1>
-          <p className="text-white/80 text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/80 text-sm md:text-xl max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </motion.div>

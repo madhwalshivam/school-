@@ -71,8 +71,8 @@ export default function Campus() {
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-[#2E2370] mb-8">Safe & Reliable <span className="text-[#4A3C8C]">Transport</span></h2>
@@ -91,8 +91,8 @@ export default function Campus() {
             </div>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="rounded-3xl overflow-hidden shadow-2xl h-[400px]"
           >

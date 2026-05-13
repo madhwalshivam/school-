@@ -72,20 +72,20 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-6 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-lg bg-white p-1 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-sm">
+            <Link to="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
+              <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-white p-1 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 shadow-sm">
                 <img src="/assets/logo.png" alt="GD Convent" className="w-full h-full object-contain" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <h1
-                  className={`${textColor}`}
-                  style={{ fontSize: '1.125rem', fontWeight: 700, lineHeight: 1.1 }}
+                  className={`${textColor} truncate`}
+                  style={{ fontSize: 'clamp(0.875rem, 4vw, 1.125rem)', fontWeight: 700, lineHeight: 1.1 }}
                 >
                   G.D. Convent
                 </h1>
                 <p
-                  className="text-white/70"
-                  style={{ fontSize: '0.65rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}
+                  className="text-white/70 truncate"
+                  style={{ fontSize: 'clamp(0.5rem, 2vw, 0.65rem)', letterSpacing: '0.05em', textTransform: 'uppercase' }}
                 >
                   International School
                 </p>
@@ -134,40 +134,83 @@ export function Navigation() {
       </motion.nav>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, x: "100%" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
-          transition={{ duration: 0.3 }}
-          className="fixed inset-0 top-[60px] bg-[#2E2370] z-40 md:hidden overflow-y-auto"
-        >
-          <div className="p-6 space-y-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block transition-colors py-4 border-b border-white/10 text-lg font-medium ${
-                  location.pathname === link.href ? "text-[#F4E21A]" : "text-white"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Button
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                setIsAdmissionOpen(true);
-              }}
-              size="lg"
-              className="w-full bg-[#F4E21A] hover:bg-[#e5d419] text-[#2E2370] font-bold rounded-xl"
+      <motion.div
+        initial={{ opacity: 0, x: "100%" }}
+        animate={{ 
+          opacity: isMobileMenuOpen ? 1 : 0, 
+          x: isMobileMenuOpen ? 0 : "100%",
+          pointerEvents: isMobileMenuOpen ? "auto" : "none"
+        }}
+        transition={{ type: "spring", damping: 25, stiffness: 200 }}
+        className="fixed inset-0 top-0 bg-[#2E2370]/95 backdrop-blur-xl z-[60] md:hidden overflow-y-auto"
+      >
+        <div className="flex flex-col h-full">
+          <div className="flex items-center justify-between p-6 border-b border-white/10">
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-lg bg-white p-1">
+                <img src="/assets/logo.png" alt="GD Convent" className="w-full h-full object-contain" />
+              </div>
+              <h1 className="text-white font-bold text-lg">G.D. Convent</h1>
+            </Link>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-white hover:bg-white/10 rounded-full transition-colors"
             >
-              Apply Now
-            </Button>
+              <X className="w-8 h-8" />
+            </button>
           </div>
-        </motion.div>
-      )}
+
+          <div className="p-8 space-y-4">
+            {navLinks.map((link, i) => (
+              <motion.div
+                key={link.label}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: isMobileMenuOpen ? 1 : 0, x: isMobileMenuOpen ? 0 : 20 }}
+                transition={{ delay: i * 0.1 }}
+              >
+                <Link
+                  to={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block py-4 text-3xl font-light transition-colors ${
+                    location.pathname === link.href ? "text-[#F4E21A] font-medium" : "text-white"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
+            ))}
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: isMobileMenuOpen ? 1 : 0, y: isMobileMenuOpen ? 0 : 20 }}
+              transition={{ delay: navLinks.length * 0.1 }}
+              className="pt-8"
+            >
+              <Button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsAdmissionOpen(true);
+                }}
+                size="lg"
+                className="w-full h-16 bg-[#F4E21A] hover:bg-white text-[#2E2370] font-bold rounded-2xl text-xl shadow-xl transition-all active:scale-95"
+              >
+                Apply Now
+              </Button>
+            </motion.div>
+
+            <div className="pt-12 grid grid-cols-2 gap-4">
+              <a href="tel:+919991540996" className="flex flex-col items-center p-4 rounded-2xl bg-white/5 text-white gap-2">
+                <Phone className="w-6 h-6 text-[#F4E21A]" />
+                <span className="text-xs">Call Us</span>
+              </a>
+              <a href="mailto:admissions@gdconvent.edu.in" className="flex flex-col items-center p-4 rounded-2xl bg-white/5 text-white gap-2">
+                <Mail className="w-6 h-6 text-[#F4E21A]" />
+                <span className="text-xs">Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
 
       {/* Admission Dialog */}
       <AdmissionDialog isOpen={isAdmissionOpen} onClose={() => setIsAdmissionOpen(false)} />

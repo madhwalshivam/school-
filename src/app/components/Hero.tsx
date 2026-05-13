@@ -8,7 +8,7 @@ export function Hero() {
   const [isAdmissionOpen, setIsAdmissionOpen] = useState(false);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <section className="relative h-[100svh] w-full overflow-hidden flex items-center justify-center pt-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -20,7 +20,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 text-center pt-20 md:pt-10">
+      <div className="relative z-20 w-full max-w-4xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -41,14 +41,14 @@ export function Hero() {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-white mb-6"
             style={{
-              fontSize: 'clamp(2.25rem, 8vw, 4rem)',
-              fontWeight: 300,
+              fontSize: 'clamp(1.5rem, 6vw, 4rem)',
+              fontWeight: 500,
               lineHeight: 1.1,
-              letterSpacing: '0.01em'
+              letterSpacing: '-0.02em'
             }}
           >
             Where Tradition <br />
-            <span className="font-medium text-[#F4E21A]">Meets Tomorrow</span>
+            <span className="font-bold text-[#F4E21A]">Meets Tomorrow</span>
           </motion.h1>
 
           <motion.p
@@ -56,7 +56,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-white/80 mb-10 max-w-2xl mx-auto font-light px-4 md:px-0"
-            style={{ fontSize: 'clamp(1rem, 3vw, 1.125rem)', lineHeight: 1.6 }}
+            style={{ fontSize: 'clamp(0.875rem, 3vw, 1.125rem)', lineHeight: 1.6 }}
           >
             Join Palwal's premier international institution. We combine heritage values 
             with cutting-edge technology to nurture the leaders of a global future.
@@ -71,7 +71,7 @@ export function Hero() {
             <Button
               onClick={() => setIsAdmissionOpen(true)}
               size="lg"
-              className="w-full sm:w-auto bg-[#F4E21A] hover:bg-white text-[#2E2370] font-semibold px-8 py-3.5 h-auto rounded-full transition-all duration-300 shadow-lg text-base"
+              className="w-full sm:w-auto bg-[#F4E21A] hover:bg-white text-[#2E2370] font-bold px-8 py-4 h-auto rounded-full transition-all duration-300 shadow-lg text-base"
             >
               Enquire Now
               <ArrowRight className="ml-2 h-4 w-4" />
@@ -80,29 +80,13 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border border-white/40 text-black hover:bg-white/10 px-8 py-3.5 h-auto rounded-full transition-all duration-300 text-base backdrop-blur-sm group flex items-center justify-center"
+                className="w-full border-2 border-white/40 text-white hover:bg-white/10 px-8 py-4 h-auto rounded-full transition-all duration-300 text-base backdrop-blur-sm group flex items-center justify-center"
               >
                 <Phone className="h-4 w-4 mr-2" />
                 Call Now
               </Button>
             </a>
           </motion.div>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-        >
-          <div className="w-5 h-9 border border-white/30 rounded-full flex items-start justify-center p-1.5">
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1 h-1 bg-[#F4E21A] rounded-full"
-            />
-          </div>
         </motion.div>
       </div>
 
