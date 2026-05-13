@@ -23,17 +23,18 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.pageYOffset > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // On home page, transparent until scroll. On subpages, solid or blurred background.
   const navBackground = isHomePage 
-    ? (isScrolled ? "bg-[#2E2370] shadow-lg" : "bg-transparent")
+    ? (isScrolled ? "bg-[#2E2370]/95 backdrop-blur-lg shadow-xl" : "bg-transparent")
     : "bg-[#2E2370] shadow-lg";
+
+  const navPadding = isScrolled ? "py-2" : "py-4";
 
   const textColor = "text-white"; // Always white on dark purple background
 
@@ -69,7 +70,7 @@ export function Navigation() {
         )}
 
         {/* Main Navigation */}
-        <div className="max-w-7xl mx-auto px-6 py-3">
+        <div className={`max-w-7xl mx-auto px-6 transition-all duration-300 ${navPadding}`}>
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2 md:gap-3 group shrink-0">
