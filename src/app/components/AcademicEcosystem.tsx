@@ -1,68 +1,72 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
-import { Baby, Users, Backpack, GraduationCap } from "lucide-react";
+import { Globe, BarChart, Database, Smartphone } from "lucide-react";
 
-const programs = [
+const services = [
   {
-    id: "pre-primary",
-    label: "Pre-Primary",
-    icon: Baby,
-    grades: "Nursery - UKG",
-    description: "Foundational years focusing on play-based learning, early literacy, and social-emotional development through Montessori-inspired methods.",
+    id: "web-dev",
+    label: "Web & Software",
+    icon: Globe,
+    category: "Development",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+    description: "Building high-performance web applications and custom software solutions tailored to your business needs.",
     highlights: [
-      "Play-based Montessori curriculum",
-      "Early literacy & numeracy foundation",
-      "Social-emotional skill development",
-      "Activity-based learning environment",
+      "Custom React & Next.js development",
+      "Robust Backend systems (Node.js/Go)",
+      "Software automation tools",
+      "API design and integration",
     ],
   },
   {
-    id: "primary",
-    label: "Primary",
-    icon: Users,
-    grades: "Classes I - V",
-    description: "Building strong academic foundations with focus on core subjects, creative arts, and physical education while nurturing curiosity and love for learning.",
+    id: "marketing",
+    label: "Digital Marketing",
+    icon: BarChart,
+    category: "Growth",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    description: "Data-driven marketing strategies focusing on Meta Ads, SEO, and brand positioning to drive conversions.",
     highlights: [
-      "NCERT curriculum with enhanced methodology",
-      "Introduction to digital literacy",
-      "Co-curricular activities integration",
-      "Skill-based assessment approach",
+      "Expert Meta Ads management",
+      "Performance marketing strategy",
+      "SEO & Content optimization",
+      "Conversion Rate Optimization (CRO)",
     ],
   },
   {
-    id: "middle",
-    label: "Middle School",
-    icon: Backpack,
-    grades: "Classes VI - VIII",
-    description: "Critical thinking and problem-solving skills development with introduction to advanced sciences, mathematics, and languages.",
+    id: "solutions",
+    label: "CRM & ERP",
+    icon: Database,
+    category: "Management",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    description: "Specialized in creating custom CRM and School ERP systems to streamline business operations.",
     highlights: [
-      "STEM education integration",
-      "Project-based learning approach",
-      "Life skills & leadership training",
-      "Competitive exam preparation foundation",
+      "Custom School ERP development",
+      "Business CRM automation",
+      "Database management & security",
+      "Reporting & Analytics dashboards",
     ],
   },
   {
-    id: "senior",
-    label: "Senior Secondary",
-    icon: GraduationCap,
-    grades: "Classes IX - XII",
-    description: "Comprehensive CBSE board preparation with specialization in Science, Commerce, and Humanities streams, preparing students for higher education.",
+    id: "apps",
+    label: "Mobile & E-com",
+    icon: Smartphone,
+    category: "E-commerce",
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+    description: "Creating seamless mobile experiences and high-converting e-commerce stores for global brands.",
     highlights: [
-      "Stream specialization (Science/Commerce/Arts)",
-      "Advanced CBSE curriculum",
-      "Entrance exam coaching (JEE/NEET/CUET)",
-      "Career counseling & university guidance",
+      "React Native & Flutter apps",
+      "Shopify & Custom E-commerce",
+      "Secure payment gateway integration",
+      "UI/UX for mobile platforms",
     ],
   },
 ];
 
 export function AcademicEcosystem() {
-  const [activeTab, setActiveTab] = useState("pre-primary");
+  const [activeTab, setActiveTab] = useState("web-dev");
 
   return (
-    <section className="relative py-32 bg-white">
+    <section className="relative py-20 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,51 +75,51 @@ export function AcademicEcosystem() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-[#114BFF] tracking-[0.2em] uppercase mb-4">
-            Complete Learning Journey
+          <p className="text-[#3B82F6] tracking-[0.2em] uppercase mb-4 font-bold">
+            Detailed Expertise
           </p>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.1, color: '#081B33' }}>
-            Academic Ecosystem
+          <h2 id="detailed-services" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 800, lineHeight: 1.1, color: '#FFFFFF' }}>
+            Core Technical Solutions
           </h2>
         </motion.div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="w-full grid grid-cols-2 md:grid-cols-4 gap-4 bg-transparent h-auto mb-12">
-            {programs.map((program) => (
+            {services.map((service) => (
               <TabsTrigger
-                key={program.id}
-                value={program.id}
-                className="flex flex-col items-center gap-3 p-6 rounded-2xl border-2 border-[#081B33]/10 data-[state=active]:border-[#114BFF] data-[state=active]:bg-[#114BFF]/5 transition-all duration-300 hover:border-[#114BFF]/50"
+                key={service.id}
+                value={service.id}
+                className="flex flex-col items-center gap-3 p-6 rounded-2xl border-2 border-white/5 bg-white/5 data-[state=active]:border-[#3B82F6] data-[state=active]:bg-[#3B82F6]/10 transition-all duration-300 hover:border-[#3B82F6]/50 text-white/70 data-[state=active]:text-white"
               >
-                <program.icon className="w-8 h-8 text-[#114BFF]" />
-                <span style={{ fontWeight: 600, fontSize: '0.9375rem' }}>{program.label}</span>
+                <service.icon className="w-8 h-8 text-[#3B82F6]" />
+                <span style={{ fontWeight: 700, fontSize: '0.9375rem' }}>{service.label}</span>
               </TabsTrigger>
             ))}
           </TabsList>
 
-          {programs.map((program) => (
-            <TabsContent key={program.id} value={program.id} className="mt-0">
+          {services.map((service) => (
+            <TabsContent key={service.id} value={service.id} className="mt-0">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 className="grid md:grid-cols-2 gap-12 items-center"
               >
-                <div>
-                  <div className="inline-block px-4 py-2 rounded-full bg-[#114BFF]/10 text-[#114BFF] mb-6" style={{ fontWeight: 600 }}>
-                    {program.grades}
+                <div className="order-2 md:order-1">
+                  <div className="inline-block px-4 py-2 rounded-full bg-[#3B82F6]/10 text-[#3B82F6] mb-6" style={{ fontWeight: 700 }}>
+                    {service.category}
                   </div>
 
-                  <h3 className="text-[#081B33] mb-4" style={{ fontSize: '2rem', fontWeight: 700 }}>
-                    {program.label}
+                  <h3 className="text-white mb-4" style={{ fontSize: '2.5rem', fontWeight: 800 }}>
+                    {service.label}
                   </h3>
 
-                  <p className="text-[#4B5563] mb-8 leading-relaxed" style={{ fontSize: '1.125rem' }}>
-                    {program.description}
+                  <p className="text-[#94A3B8] mb-8 leading-relaxed" style={{ fontSize: '1.125rem' }}>
+                    {service.description}
                   </p>
 
                   <div className="space-y-3">
-                    {program.highlights.map((highlight, index) => (
+                    {service.highlights.map((highlight, index) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 10 }}
@@ -123,18 +127,24 @@ export function AcademicEcosystem() {
                         transition={{ delay: index * 0.1, duration: 0.4 }}
                         className="flex items-center gap-3"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#114BFF]" />
-                        <p className="text-[#4B5563]">{highlight}</p>
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#3B82F6]" />
+                        <p className="text-[#94A3B8]">{highlight}</p>
                       </motion.div>
                     ))}
                   </div>
                 </div>
 
-                <div className="relative">
-                  <div className="aspect-square rounded-3xl bg-gradient-to-br from-[#114BFF]/10 to-[#D4A64A]/10 p-12 flex items-center justify-center">
-                    <program.icon className="w-full h-full text-[#114BFF]/20" strokeWidth={0.5} />
+                <div className="relative order-1 md:order-2 group">
+                  <div className="aspect-[4/3] rounded-3xl overflow-hidden border border-white/5 shadow-2xl">
+                    <img 
+                      src={service.image} 
+                      alt={service.label} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#3B82F6]/20 to-transparent" />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#114BFF]/5 to-transparent rounded-3xl" />
+                  {/* Decorative Elements */}
+                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#3B82F6] rounded-full blur-3xl opacity-20 -z-10" />
                 </div>
               </motion.div>
             </TabsContent>

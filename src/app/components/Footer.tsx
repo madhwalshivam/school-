@@ -3,28 +3,27 @@ import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, Linkedin } from "luc
 
 const footerLinks = {
   about: [
-    { label: "Our Story", href: "#" },
-    { label: "Leadership Team", href: "#" },
-    { label: "Infrastructure", href: "#" },
-    { label: "Awards & Recognition", href: "#" },
+    { label: "My Story", href: "#" },
+    { label: "Experience", href: "#experience" },
+    { label: "Portfolio", href: "#experience" },
+    { label: "Client Testimonials", href: "#" },
   ],
-  academics: [
-    { label: "Curriculum", href: "#" },
-    { label: "Pre-Primary", href: "#" },
-    { label: "Primary & Middle", href: "#" },
-    { label: "Senior Secondary", href: "#" },
+  services: [
+    { label: "Web Development", href: "#services" },
+    { label: "Digital Marketing", href: "#services" },
+    { label: "CRM Solutions", href: "#services" },
+    { label: "App Development", href: "#services" },
   ],
-  campus: [
-    { label: "Facilities", href: "#" },
-    { label: "Virtual Tour", href: "#" },
-    { label: "Safety & Security", href: "#" },
-    { label: "Transport", href: "#" },
+  legal: [
+    { label: "Privacy Policy", href: "#" },
+    { label: "Terms of Service", href: "#" },
+    { label: "Refund Policy", href: "#" },
   ],
   connect: [
-    { label: "Admissions", href: "#" },
-    { label: "Careers", href: "#" },
-    { label: "Contact Us", href: "#" },
-    { label: "Alumni", href: "#" },
+    { label: "Book Now", href: "#" },
+    { label: "Hire Me", href: "#" },
+    { label: "Contact", href: "#" },
+    { label: "FAQ", href: "#" },
   ],
 };
 
@@ -35,13 +34,17 @@ const socialLinks = [
   { icon: Linkedin, href: "#", label: "LinkedIn" },
 ];
 
-export function Footer() {
+interface FooterProps {
+  onBookNow?: () => void;
+}
+
+export function Footer({ onBookNow }: FooterProps) {
   return (
-    <footer className="relative bg-[#2E2370] text-white pt-20 pb-8">
+    <footer className="relative bg-black text-white pt-20 pb-8 border-t border-white/5 overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#4A3C8C] rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#F4E21A] rounded-full blur-3xl" />
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#3B82F6] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#2563EB] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -51,37 +54,34 @@ export function Footer() {
           <div className="md:col-span-4">
             <div className="flex items-center gap-4 mb-8">
               <div className="w-16 h-16 rounded-2xl bg-white p-2 flex items-center justify-center shadow-lg shadow-black/20">
-                <img src="/assets/logo.png" alt="GD Convent" className="w-full h-full object-contain" />
+                <img src="/assets/logo.png" alt="Shivam Builds" className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 800, lineHeight: 1.1 }}>
-                  G.D. Convent
+                  shivambuilds.in
                 </h3>
-                <p className="text-[#F4E21A] font-bold tracking-widest text-xs uppercase">
-                  International School
+                <p className="text-[#3B82F6] font-bold tracking-widest text-xs uppercase">
+                  Freelance Excellence
                 </p>
               </div>
             </div>
-            <p className="text-white/70 mb-8 leading-relaxed italic border-l-2 border-[#F4E21A] pl-4">
-              "Nurturing Excellence, Inspiring Futures." Building Palwal's next generation of global citizens through
-              a blend of tradition and modern innovation.
+            <p className="text-[#94A3B8] mb-8 leading-relaxed italic border-l-2 border-[#3B82F6] pl-4">
+              "Turning ideas into digital reality." Providing expert development and marketing 
+              solutions for businesses worldwide with over 5 years of industry experience.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-3">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#F4E21A] flex-shrink-0 mt-1" />
-                <p className="text-white/70">
-                  W7RM+9GW, V.P.O. Nangal Jat, Tehsil Hathin, Distt. Palwal, Palwal, Haryana 121105
+                <MapPin className="w-5 h-5 text-[#3B82F6] flex-shrink-0 mt-1" />
+                <p className="text-[#94A3B8]">
+                  Delhi NCR, India
                 </p>
               </div>
+             
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-[#F4E21A] flex-shrink-0" />
-                <p className="text-white/70">+91 99915 40996</p>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-[#F4E21A] flex-shrink-0" />
-                <p className="text-white/70">admissions@gdconvent.edu.in</p>
+                <Mail className="w-5 h-5 text-[#3B82F6] flex-shrink-0" />
+                <p className="text-[#94A3B8]">shivambuilds@gmail.com</p>
               </div>
             </div>
           </div>
@@ -97,7 +97,7 @@ export function Footer() {
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-white/70 hover:text-[#F4E21A] transition-colors duration-300"
+                      className="text-white/70 hover:text-[#3B82F6] transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -108,14 +108,14 @@ export function Footer() {
 
             <div>
               <h4 className="mb-4" style={{ fontSize: '1.125rem', fontWeight: 600 }}>
-                Academics
+                Services
               </h4>
               <ul className="space-y-2">
-                {footerLinks.academics.map((link) => (
+                {footerLinks.services.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-white/70 hover:text-[#F4E21A] transition-colors duration-300"
+                      className="text-white/70 hover:text-[#3B82F6] transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -126,14 +126,14 @@ export function Footer() {
 
             <div>
               <h4 className="mb-4" style={{ fontSize: '1.125rem', fontWeight: 600 }}>
-                Campus
+                Legal
               </h4>
               <ul className="space-y-2">
-                {footerLinks.campus.map((link) => (
+                {footerLinks.legal.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-white/70 hover:text-[#F4E21A] transition-colors duration-300"
+                      className="text-white/70 hover:text-[#3B82F6] transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -149,12 +149,12 @@ export function Footer() {
               <ul className="space-y-2">
                 {footerLinks.connect.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-white/70 hover:text-[#F4E21A] transition-colors duration-300"
+                    <button
+                      onClick={onBookNow}
+                      className="text-[#94A3B8] hover:text-[#3B82F6] transition-colors duration-300 text-left"
                     >
                       {link.label}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -172,22 +172,20 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h4 className="mb-2" style={{ fontSize: '1.25rem', fontWeight: 600 }}>
-                Visit Our Campus
+              <h4 className="mb-2" style={{ fontSize: '1.25rem', fontWeight: 700 }}>
+                Ready to scale your business?
               </h4>
-              <p className="text-white/70">
-                Experience our world-class facilities in Nangal Jat, Palwal
+              <p className="text-[#94A3B8]">
+                Let's discuss your next project and build something extraordinary.
               </p>
             </div>
             <div className="flex gap-4">
-              <a 
-                href="https://share.google/FwG38yMWIYHbjFBAa" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-xl bg-[#F4E21A] hover:bg-[#e5d419] text-[#2E2370] transition-colors duration-300 inline-block font-bold"
+              <button 
+                onClick={onBookNow}
+                className="px-6 py-3 rounded-xl bg-[#3B82F6] hover:bg-[#2563EB] text-white transition-colors duration-300 inline-block font-bold shadow-[0_0_15px_rgba(59,130,246,0.3)]"
               >
-                Get Directions
-              </a>
+                Book a Consultation
+              </button>
             </div>
           </div>
         </motion.div>
@@ -196,7 +194,7 @@ export function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-white/70">
-              © 2026 G.D. Convent International School. All rights reserved. | CBSE Affiliation No: 531258
+              © 2026 Shivam Builds. All rights reserved. | Empowering Businesses Digitally
             </p>
 
             {/* Social Links */}
@@ -206,7 +204,7 @@ export function Footer() {
                   key={social.label}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#F4E21A] hover:text-[#2E2370] backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="w-10 h-10 rounded-xl bg-white/5 hover:bg-[#3B82F6] hover:text-white backdrop-blur-md flex items-center justify-center transition-all duration-300 hover:scale-110 border border-white/5"
                 >
                   <social.icon className="w-5 h-5" />
                 </a>

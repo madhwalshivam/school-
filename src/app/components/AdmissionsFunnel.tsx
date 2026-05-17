@@ -6,18 +6,18 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const steps = [
-  { number: "01", title: "Inquiry", description: "Submit online form or visit campus" },
-  { number: "02", title: "Application", description: "Complete admission form with documents" },
-  { number: "03", title: "Interaction", description: "Student interaction & parent meeting" },
-  { number: "04", title: "Confirmation", description: "Fee payment & enrollment completion" },
+  { number: "01", title: "Discovery", description: "Deep dive into your business goals and requirements." },
+  { number: "02", title: "Strategy", description: "Crafting a custom roadmap for development and marketing." },
+  { number: "03", title: "Execution", description: "Building high-performance solutions with precision." },
+  { number: "04", title: "Growth", description: "Continuous optimization to scale your digital presence." },
 ];
 
 export function AdmissionsFunnel() {
   const [formData, setFormData] = useState({
-    parentName: "",
+    name: "",
     email: "",
     phone: "",
-    grade: "",
+    service: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -26,7 +26,7 @@ export function AdmissionsFunnel() {
   };
 
   return (
-    <section className="relative py-32 bg-white">
+    <section className="relative py-32 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,11 +35,11 @@ export function AdmissionsFunnel() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-[#2E2370] tracking-[0.2em] uppercase mb-4 font-bold">
-            Join Our Community
+          <p className="text-[#3B82F6] tracking-[0.2em] uppercase mb-4 font-bold">
+            Work With Me
           </p>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 700, lineHeight: 1.1, color: '#2E2370' }}>
-            Admissions Open for 2026-27
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 800, lineHeight: 1.1, color: '#FFFFFF' }}>
+            Ready to Build Your Project?
           </h2>
         </motion.div>
 
@@ -62,38 +62,38 @@ export function AdmissionsFunnel() {
                 className="flex gap-6 items-start group"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#2E2370] to-[#1a1442] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <span className="text-white" style={{ fontSize: '1.25rem', fontWeight: 700 }}>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#2563EB] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <span className="text-white" style={{ fontSize: '1.25rem', fontWeight: 800 }}>
                       {step.number}
                     </span>
                   </div>
                 </div>
 
                 <div className="flex-1 pt-2">
-                  <h3 className="text-[#2E2370] mb-2 group-hover:text-[#F4E21A] transition-colors duration-300" style={{ fontSize: '1.5rem', fontWeight: 700 }}>
+                  <h3 className="text-white mb-2 group-hover:text-[#3B82F6] transition-colors duration-300" style={{ fontSize: '1.5rem', fontWeight: 700 }}>
                     {step.title}
                   </h3>
-                  <p className="text-[#7A7A7A] leading-relaxed">
+                  <p className="text-[#94A3B8] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
 
-                <CheckCircle2 className="w-6 h-6 text-[#F4E21A] opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-4" />
+                <CheckCircle2 className="w-6 h-6 text-[#3B82F6] opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-4" />
               </motion.div>
             ))}
 
             <div className="pt-6 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#2E2370]" />
-                <p className="text-[#7A7A7A]">Limited seats available for each grade</p>
+                <div className="w-2 h-2 rounded-full bg-[#3B82F6]" />
+                <p className="text-[#94A3B8]">Dedicated developer for every project</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#2E2370]" />
-                <p className="text-[#7A7A7A]">Early bird discount for applications before June 30</p>
+                <div className="w-2 h-2 rounded-full bg-[#3B82F6]" />
+                <p className="text-[#94A3B8]">24/7 technical support and maintenance</p>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-[#2E2370]" />
-                <p className="text-[#7A7A7A]">Scholarships available for meritorious students</p>
+                <div className="w-2 h-2 rounded-full bg-[#3B82F6]" />
+                <p className="text-[#94A3B8]">Weekly progress reports and sync calls</p>
               </div>
             </div>
           </motion.div>
@@ -105,34 +105,34 @@ export function AdmissionsFunnel() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-br from-[#F7F9FC] to-white border border-[#2E2370]/10 shadow-2xl">
+            <div className="relative p-8 md:p-12 rounded-3xl bg-[#111111] border border-white/5 shadow-2xl">
               {/* Decorative Element */}
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#F4E21A] rounded-full blur-3xl opacity-20 -z-10" />
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-[#3B82F6] rounded-full blur-3xl opacity-20 -z-10" />
 
-              <h3 className="text-[#2E2370] mb-2" style={{ fontSize: '1.75rem', fontWeight: 700 }}>
-                Start Your Journey
+              <h3 className="text-white mb-2" style={{ fontSize: '1.75rem', fontWeight: 800 }}>
+                Get Started
               </h3>
-              <p className="text-[#7A7A7A] mb-8">
-                Fill in your details and our admissions team will contact you within 24 hours
+              <p className="text-[#94A3B8] mb-8">
+                Fill in your details and I'll get back to you within 24 hours
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-[#2E2370] mb-2" style={{ fontWeight: 600 }}>
-                    Parent's Name *
+                  <label className="block text-white mb-2" style={{ fontWeight: 600 }}>
+                    Full Name *
                   </label>
                   <Input
                     type="text"
-                    placeholder="Enter full name"
-                    value={formData.parentName}
-                    onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                    className="h-12 rounded-xl border-[#2E2370]/20 focus:border-[#2E2370]"
+                    placeholder="Enter your name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="h-12 rounded-xl border-white/10 bg-white/5 focus:border-[#3B82F6] text-white"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[#2E2370] mb-2" style={{ fontWeight: 600 }}>
+                  <label className="block text-white mb-2" style={{ fontWeight: 600 }}>
                     Email Address *
                   </label>
                   <Input
@@ -140,13 +140,13 @@ export function AdmissionsFunnel() {
                     placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="h-12 rounded-xl border-[#2E2370]/20 focus:border-[#2E2370]"
+                    className="h-12 rounded-xl border-white/10 bg-white/5 focus:border-[#3B82F6] text-white"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[#2E2370] mb-2" style={{ fontWeight: 600 }}>
+                  <label className="block text-white mb-2" style={{ fontWeight: 600 }}>
                     Phone Number *
                   </label>
                   <Input
@@ -154,35 +154,28 @@ export function AdmissionsFunnel() {
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="h-12 rounded-xl border-[#2E2370]/20 focus:border-[#2E2370]"
+                    className="h-12 rounded-xl border-white/10 bg-white/5 focus:border-[#3B82F6] text-white"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[#2E2370] mb-2" style={{ fontWeight: 600 }}>
-                    Grade Applying For *
+                  <label className="block text-white mb-2" style={{ fontWeight: 600 }}>
+                    Service Interested In *
                   </label>
-                  <Select value={formData.grade} onValueChange={(value) => setFormData({ ...formData, grade: value })}>
-                    <SelectTrigger className="h-12 rounded-xl border-[#2E2370]/20">
-                      <SelectValue placeholder="Select grade" />
+                  <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
+                    <SelectTrigger className="h-12 rounded-xl border-white/10 bg-white/5 text-white">
+                      <SelectValue placeholder="Select service" />
                     </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="nursery">Nursery</SelectItem>
-                      <SelectItem value="lkg">LKG</SelectItem>
-                      <SelectItem value="ukg">UKG</SelectItem>
-                      <SelectItem value="1">Class I</SelectItem>
-                      <SelectItem value="2">Class II</SelectItem>
-                      <SelectItem value="3">Class III</SelectItem>
-                      <SelectItem value="4">Class IV</SelectItem>
-                      <SelectItem value="5">Class V</SelectItem>
-                      <SelectItem value="6">Class VI</SelectItem>
-                      <SelectItem value="7">Class VII</SelectItem>
-                      <SelectItem value="8">Class VIII</SelectItem>
-                      <SelectItem value="9">Class IX</SelectItem>
-                      <SelectItem value="10">Class X</SelectItem>
-                      <SelectItem value="11">Class XI</SelectItem>
-                      <SelectItem value="12">Class XII</SelectItem>
+                    <SelectContent className="bg-[#111111] border-white/10 text-white">
+                      <SelectItem value="web">Web Development</SelectItem>
+                      <SelectItem value="soft">Software Development</SelectItem>
+                      <SelectItem value="crm">CRM Making</SelectItem>
+                      <SelectItem value="erp">School ERP</SelectItem>
+                      <SelectItem value="meta">Meta Ads</SelectItem>
+                      <SelectItem value="graphic">Graphic Design</SelectItem>
+                      <SelectItem value="app">App Development</SelectItem>
+                      <SelectItem value="ecom">E-commerce Making</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -190,8 +183,8 @@ export function AdmissionsFunnel() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full h-14 bg-[#2E2370] hover:bg-[#F4E21A] hover:text-[#2E2370] text-white rounded-xl group"
-                  style={{ fontSize: '1.0625rem', fontWeight: 600 }}
+                  className="w-full h-14 bg-[#3B82F6] hover:bg-[#2563EB] text-white rounded-xl group font-bold shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                  style={{ fontSize: '1.0625rem' }}
                 >
                   Submit Inquiry
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />

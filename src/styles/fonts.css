@@ -3,9 +3,9 @@
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 
 * {
-  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3 {
-  font-family: 'Satoshi', 'Inter', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
 }

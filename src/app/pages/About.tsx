@@ -1,56 +1,61 @@
+import { useEffect } from "react";
 import { motion } from "motion/react";
 import { SubPageHero } from "../components/SubPageHero";
 
 export default function About() {
+  useEffect(() => {
+    document.title = "About Us | Best Website Developer in Delhi - Shivam Builds";
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#F7F7F7]">
+    <div className="min-h-screen bg-[#050505] text-white">
       <SubPageHero 
-        title="Our Legacy" 
-        subtitle="Since 2004, G.D. Convent International School has been a beacon of quality education in Palwal, Haryana."
-        backgroundImage="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2070&auto=format&fit=crop"
+        title="About Us" 
+        subtitle="Expert Freelance Developer & Digital Marketer with over 5 years of experience in building high-performance digital engines."
+        backgroundImage="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop"
       />
 
       {/* Mission & Vision */}
-      <section className="py-20 bg-white">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-10 rounded-3xl bg-[#D9D4E3]/20 border border-[#2E2370]/10"
+            className="p-10 rounded-3xl bg-[#111111] border border-white/5"
           >
-            <h2 className="text-3xl font-bold text-[#2E2370] mb-6">Our Mission</h2>
-            <p className="text-[#7A7A7A] leading-relaxed text-lg">
-              To provide a nurturing environment that fosters academic excellence, character development, and global perspectives. We strive to empower our students with the skills and knowledge needed to excel in an ever-changing world.
+            <h2 className="text-3xl font-bold text-white mb-6">My Mission</h2>
+            <p className="text-[#94A3B8] leading-relaxed text-lg">
+              To provide cutting-edge digital solutions that empower businesses to scale and succeed. I strive to combine technical expertise with creative marketing to deliver measurable growth for my clients.
             </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="p-10 rounded-3xl bg-[#F4E21A]/10 border border-[#F4E21A]/20"
+            className="p-10 rounded-3xl bg-[#111111] border border-white/5"
           >
-            <h2 className="text-3xl font-bold text-[#2E2370] mb-6">Our Vision</h2>
-            <p className="text-[#7A7A7A] leading-relaxed text-lg">
-              To be a premier institution recognized for its commitment to holistic education, innovation, and social responsibility. We envision our graduates as compassionate leaders who contribute positively to society.
+            <h2 className="text-3xl font-bold text-white mb-6">My Vision</h2>
+            <p className="text-[#94A3B8] leading-relaxed text-lg">
+              To be the most trusted partner for businesses looking to innovate and dominate their industry. I envision a future where technology and marketing work in perfect harmony to create exceptional user experiences.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* History */}
-      <section className="py-20">
+      <section className="py-20 bg-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 items-center gap-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="rounded-3xl overflow-hidden shadow-2xl"
+              className="rounded-3xl overflow-hidden shadow-2xl border border-white/5"
             >
               <img
-                src="assets/school.png"
-                alt="History"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+                alt="Working"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -59,22 +64,22 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-[#2E2370] mb-8">Two Decades of <span className="text-[#4A3C8C]">Nurturing Minds</span></h2>
-              <div className="space-y-6 text-[#7A7A7A] text-lg">
+              <h2 className="text-4xl font-bold text-white mb-8">5+ Years of <span className="text-[#3B82F6]">Building Excellence</span></h2>
+              <div className="space-y-6 text-[#94A3B8] text-lg">
                 <p>
-                  G.D. Convent International School was founded with a clear vision: to bring world-class education to the heart of Haryana. Over the past 20 years, we have grown from a small institution to a sprawling campus that serves thousands of students.
+                  Started in 2018, Shivam Builds has been at the forefront of digital transformation. I have successfully delivered over 100 projects, ranging from custom CRMs to high-converting Meta Ads campaigns.
                 </p>
                 <p>
-                  Our journey has been marked by continuous innovation in teaching methodologies, state-of-the-art infrastructure development, and a steadfast commitment to our core values.
+                  My journey is defined by a passion for solving complex problems and a dedication to delivering results that matter. I believe in a client-first approach and continuous learning.
                 </p>
                 <div className="grid grid-cols-2 gap-8 pt-6">
                   <div>
-                    <h3 className="text-3xl font-bold text-[#2E2370]">20+</h3>
-                    <p className="text-[#4A3C8C] font-semibold">Years of Excellence</p>
+                    <h3 className="text-3xl font-bold text-white">5+</h3>
+                    <p className="text-[#3B82F6] font-semibold">Years Experience</p>
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-[#2E2370]">5000+</h3>
-                    <p className="text-[#4A3C8C] font-semibold">Alumni Worldwide</p>
+                    <h3 className="text-3xl font-bold text-white">100+</h3>
+                    <p className="text-[#3B82F6] font-semibold">Projects Completed</p>
                   </div>
                 </div>
               </div>

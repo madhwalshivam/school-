@@ -8,7 +8,7 @@ interface SubPageHeroProps {
 
 export function SubPageHero({ title, subtitle, backgroundImage }: SubPageHeroProps) {
   return (
-    <section className="relative h-[40vh] min-h-[300px] w-full overflow-hidden flex items-center justify-center pt-16">
+    <section className="relative h-[60vh] min-h-[450px] w-full overflow-hidden flex items-center justify-center pt-24">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -16,7 +16,8 @@ export function SubPageHero({ title, subtitle, backgroundImage }: SubPageHeroPro
           alt={title} 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#2E2370]/85 z-10" />
+        <div className="absolute inset-0 bg-black/80 z-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#050505] z-10" />
       </div>
 
       {/* Content */}
